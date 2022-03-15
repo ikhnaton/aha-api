@@ -1,0 +1,22 @@
+{
+  "name": "aha-api",
+  "version": "0.0.1",
+  "description": "Javascript api integration for AHA",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "npm run build-watch",
+    "build": "tsc",
+    "build-watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "ts-loader": "^9.2.7",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0"
+  },
+  "author": "ikhnaton <ikhnaton@techie.com>",
+  "license": "ISC"
+}
