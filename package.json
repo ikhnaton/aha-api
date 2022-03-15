@@ -18,5 +18,9 @@
     "dotenv": "^16.0.0"
   },
   "author": "ikhnaton <ikhnaton@techie.com>",
-  "license": "ISC"
+  "license": "MIT",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/ikhnaton/aha-api.git"
+  }
 }
