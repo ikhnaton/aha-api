@@ -1,6 +1,6 @@
 {
-  "name": "aha-api",
-  "version": "0.0.1",
+  "name": "aha-js-api",
+  "version": "0.0.3",
   "description": "Javascript api integration for AHA",
   "main": "lib/index.js",
   "scripts": {

@@ -7,6 +7,7 @@ export const getIdeasByProduct = (axios: AxiosInstance) => async (productId: str
 		url: `products/${productId}/ideas`
 	});
 }
+
 export const getIdea = (axios: AxiosInstance) => async (ideaId: string) =>
 {
 	return axios({
