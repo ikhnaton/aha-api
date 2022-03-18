@@ -2,7 +2,16 @@ import { AxiosInstance } from "axios";
 import { objectHasError, returnError } from "./util/errors";
 import { getData } from "./util/Helpers";
 
-export const getIdeasByProduct = (axios: AxiosInstance) => async (productId: string, page = "1") =>
+type IdeaProps = {
+	productId: string,
+	page?: string,
+	fields?: string[]
+}
+export const getIdeasByProduct = (axios: AxiosInstance) => async ({
+	productId,
+	page = "1",
+	fields = []
+}: IdeaProps) =>
 {
 	if (page === "all")
 	{
@@ -12,7 +21,7 @@ export const getIdeasByProduct = (axios: AxiosInstance) => async (productId: str
 
 		do {
 			const result: any = await getData(axios, {
-				url: `products/${productId}/ideas?page=${currentPage}`
+				url: `products/${productId}/ideas?page=${currentPage}&fields=${fields.join((","))}`
 			});
 
 			if (objectHasError(result))
@@ -29,7 +38,7 @@ export const getIdeasByProduct = (axios: AxiosInstance) => async (productId: str
 		return ideas;
 	}
 	return getData(axios, {
-		url: `products/${productId}/ideas?page=${page}`
+		url: `products/${productId}/ideas?page=${page}&fields=${fields.join(".")}`
 	});
 }
 
