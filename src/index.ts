@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 import { getCurrentUser } from './User';
-import { getIdea, getIdeasByProduct } from './Ideas';
+import { createIdea, getIdea, getIdeasByProduct, CreateIdeaProps } from './Ideas';
 
 const ahaApi = (key: string, ahaHost: string) =>
 {
@@ -17,7 +17,8 @@ const ahaApi = (key: string, ahaHost: string) =>
 		},
 		ideas: {
 			getIdeasByProduct: getIdeasByProduct(axiosInstance),
-			getIdea: getIdea(axiosInstance)
+			getIdea: getIdea(axiosInstance),
+			createIdea: (idea: CreateIdeaProps) => createIdea(idea, axiosInstance)
 		}
 	};
 };

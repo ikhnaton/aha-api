@@ -1,6 +1,6 @@
 {
   "name": "aha-js-api",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Javascript api integration for AHA",
   "main": "lib/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "author": "ikhnaton <ikhnaton@techie.com>",
   "license": "MIT",
-	"repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/ikhnaton/aha-api.git"
   }
