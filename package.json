@@ -1,12 +1,12 @@
 {
   "name": "aha-js-api",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Javascript api integration for AHA",
   "main": "lib/index.js",
   "scripts": {
     "dev": "npm run build-watch",
-    "build": "tsc",
-    "build-watch": "tsc --watch"
+    "build": "rm -rf lib && tsc",
+    "build-watch": "rm -rf lib && tsc --watch"
   },
   "devDependencies": {
     "eslint": "^8.10.0",

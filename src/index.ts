@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getCurrentUser } from './User';
-import { createIdea, getIdea, getIdeasByProduct, CreateIdeaProps } from './Ideas';
+import { createIdea, updateIdea, getIdea, getIdeasByProduct, CreateIdeaProps, UpdateIdeaProps } from './Ideas';
+import { voteForIdea, VoteProps, deleteVoteFromIdea, getVotes } from './Endorsements';
 
 const ahaApi = (key: string, ahaHost: string) =>
 {
@@ -18,7 +19,13 @@ const ahaApi = (key: string, ahaHost: string) =>
 		ideas: {
 			getIdeasByProduct: getIdeasByProduct(axiosInstance),
 			getIdea: getIdea(axiosInstance),
-			createIdea: (idea: CreateIdeaProps) => createIdea(idea, axiosInstance)
+			createIdea: (idea: CreateIdeaProps) => createIdea(axiosInstance)(idea),
+			updateIdea: (idea: UpdateIdeaProps) => updateIdea(axiosInstance)(idea)
+		},
+		endorsements: {
+			getVotes: (ideaId: string) => getVotes(axiosInstance)(ideaId),
+			voteForIdea: (vote: VoteProps) => voteForIdea(axiosInstance)(vote),
+			deleteVote: (vote: VoteProps) => deleteVoteFromIdea(axiosInstance)(vote)
 		}
 	};
 };
