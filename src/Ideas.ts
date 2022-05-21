@@ -42,10 +42,15 @@ export const getIdeasByProduct = (axios: AxiosInstance) => async ({
 	});
 }
 
-export const getIdea = (axios: AxiosInstance) => async (ideaId: string) =>
+export type GetIdeaProps = {
+	ideaId: string,
+	fields: string[]
+};
+
+export const getIdea = (axios: AxiosInstance) => async ({ ideaId, fields }: GetIdeaProps) =>
 {
 	return getData(axios, {
-		url: `ideas/${ideaId}`
+		url: `ideas/${ideaId}?fields=${fields.join(".")}`
 	});
 }
 

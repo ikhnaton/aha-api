@@ -19,13 +19,13 @@ const ahaApi = (key: string, ahaHost: string) =>
 		ideas: {
 			getIdeasByProduct: getIdeasByProduct(axiosInstance),
 			getIdea: getIdea(axiosInstance),
-			createIdea: (idea: CreateIdeaProps) => createIdea(axiosInstance)(idea),
-			updateIdea: (idea: UpdateIdeaProps) => updateIdea(axiosInstance)(idea)
+			createIdea: createIdea(axiosInstance),
+			updateIdea: updateIdea(axiosInstance)
 		},
 		endorsements: {
-			getVotes: (ideaId: string) => getVotes(axiosInstance)(ideaId),
-			voteForIdea: (vote: VoteProps) => voteForIdea(axiosInstance)(vote),
-			deleteVote: (vote: VoteProps) => deleteVoteFromIdea(axiosInstance)(vote)
+			getVotes: getVotes(axiosInstance),
+			voteForIdea: voteForIdea(axiosInstance),
+			deleteVote: deleteVoteFromIdea(axiosInstance)
 		}
 	};
 };
