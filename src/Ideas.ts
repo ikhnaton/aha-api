@@ -38,7 +38,7 @@ export const getIdeasByProduct = (axios: AxiosInstance) => async ({
 		return ideas;
 	}
 	return getData(axios, {
-		url: `products/${productId}/ideas?page=${page}&fields=${fields.join(".")}`
+		url: `products/${productId}/ideas?page=${page}&fields=${fields.join(",")}`
 	});
 }
 
@@ -50,7 +50,7 @@ export type GetIdeaProps = {
 export const getIdea = (axios: AxiosInstance) => async ({ ideaId, fields }: GetIdeaProps) =>
 {
 	return getData(axios, {
-		url: `ideas/${ideaId}?fields=${fields.join(".")}`
+		url: `ideas/${ideaId}?fields=${fields.join(",")}`
 	});
 }
 
