@@ -2,6 +2,7 @@ import axios from "axios";
 import { getCurrentUser } from './User';
 import { createIdea, updateIdea, getIdea, getIdeasByProduct, CreateIdeaProps, UpdateIdeaProps } from './Ideas';
 import { voteForIdea, VoteProps, deleteVoteFromIdea, getVotes } from './Endorsements';
+import { getProductById } from "./Products";
 
 const ahaApi = (key: string, ahaHost: string) =>
 {
@@ -15,6 +16,9 @@ const ahaApi = (key: string, ahaHost: string) =>
 	return {
 		user: {
 			getCurrentUser: getCurrentUser(axiosInstance)
+		},
+		products: {
+			getProductById: getProductById(axiosInstance)
 		},
 		ideas: {
 			getIdeasByProduct: getIdeasByProduct(axiosInstance),
